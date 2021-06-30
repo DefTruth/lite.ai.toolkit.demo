@@ -17,4 +17,8 @@ cd examples && mkdir build && cd build  && cmake ../.. && make -j1
 echo "Testing Start ..."
 ./lite_yolov5
 echo "Testing Successful !"
-```
+```  
+The output can be found at *examples/logs* dir:   
+<div align='center'>
+  <img src='macos/examples/logs/test_lite_yolov5_1.jpg' height="256px">
+</div>  
