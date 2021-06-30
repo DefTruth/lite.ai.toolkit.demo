@@ -20,5 +20,5 @@ echo "Testing Successful !"
 ```  
 The output can be found at *examples/logs* dir:   
 <div align='center'>
-  <img src='macos/examples/logs/test_lite_yolov5_1.jpg' height="256px"  width="600px">
+  <img src='macos/examples/logs/test_lite_yolov5_1.jpg' height="256px"  width="460px">
 </div>  
