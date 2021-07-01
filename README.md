@@ -1,7 +1,7 @@
 # litehub-release
 Release the c++ shared libs of litehub.
 
-## 1. Build LiteHub Examples at MacOS. 
+## 1. Build LiteHub Examples for MacOS. 
 ```shell
 git clone --depth=1 https://github.com/DefTruth/litehub-release.git
 ```
@@ -20,5 +20,5 @@ echo "Testing Successful !"
 ```  
 The output can be found at *examples/logs* dir:   
 <div align='center'>
-  <img src='macos/examples/logs/test_lite_yolov5_1.jpg' height="256px"  width="460px">
+  <img src='macos/examples/logs/test_lite_yolov5_1.jpg' height="400px"  width="600px">
 </div>  

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(testlitehub)
+project(litehub-release)
 
 message(">>>> Current project is: ${CMAKE_SOURCE_DIR}")
 
