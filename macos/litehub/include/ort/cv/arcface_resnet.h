@@ -19,6 +19,10 @@ namespace ortcv
     ~ArcFaceResNet() override = default;
 
   private:
+    static constexpr const float mean_val = 127.5f;
+    static constexpr const float scale_val = 1.f / 127.5f;
+
+  private:
     Ort::Value transform(const cv::Mat &mat) override;
 
   public:
