@@ -4,7 +4,6 @@ project(litehub-release)
 message(">>>> Current project is: ${CMAKE_SOURCE_DIR}")
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_BUILD_TYPE debug)
 
 # link opencv.
 set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/opencv/lib/cmake/opencv4)

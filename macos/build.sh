@@ -1,6 +1,11 @@
 #!/bin/bash
-rm -rf examples/build
-cd examples && mkdir build && cd build  && cmake ../.. && make -j1
+if [ ! -d ./examples/build ]; then
+  mkdir ./examples/build
+else
+  rm -rf ./examples/build/*
+fi
+
+cd ./examples/build && cmake -DCMAKE_BUILD_TYPE=Realese ../.. && make -j1
 echo "Testing Start ..."
 ./lite_yolov5
 echo "Testing Successful !"
