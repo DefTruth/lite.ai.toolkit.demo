@@ -43,6 +43,12 @@
 #include "ort/cv/yolov4.h"
 #include "ort/cv/yolov5.h"
 #include "ort/cv/glint_cosface.h"
+#include "ort/cv/glint_partial_fc.h"
+#include "ort/cv/facenet.h"
+#include "ort/cv/focal_arcface.h"
+#include "ort/cv/focal_asia_arcface.h"
+#include "ort/cv/tencent_cifp_face.h"
+#include "ort/cv/tencent_curricular_face.h"
 
 #endif
 
@@ -96,6 +102,12 @@ namespace lite
     typedef ortcv::ResNet _ResNet;
     typedef ortcv::ResNeXt _ResNeXt;
     typedef ortcv::GlintCosFace _GlintCosFace;
+    typedef ortcv::GlintPartialFC _GlintPartialFC;
+    typedef ortcv::FaceNet _FaceNet;
+    typedef ortcv::FocalArcFace _FocalArcFace;
+    typedef ortcv::FocalAsiaArcFace _FocalAsiaArcFace;
+    typedef ortcv::TencentCifpFace _TencentCifpFace;
+    typedef ortcv::TencentCurricularFace _TencentCurricularFace;
 #endif
 
     // 1. classification
@@ -146,7 +158,13 @@ namespace lite
     {
 #ifdef BACKEND_ONNXRUNTIME
       typedef _ArcFaceResNet ArcFaceResNet; //
-      typedef _GlintCosFace GlintCosFace;
+      typedef _GlintCosFace GlintCosFace; //
+      typedef _GlintPartialFC GlintPartialFC;
+      typedef _FaceNet FaceNet;
+      typedef _FocalArcFace FocalArcFace;
+      typedef _FocalAsiaArcFace FocalAsiaArcFace;
+      typedef _TencentCurricularFace TencentCurricularFace;
+      typedef _TencentCifpFace TencentCifpFace;
 #endif
 
     }
@@ -198,6 +216,12 @@ namespace lite
     {
 #ifdef BACKEND_ONNXRUNTIME
       typedef _SubPixelCNN SubPixelCNN;
+#endif
+    }
+    // 12. image & face & human matting
+    namespace matting
+    {
+#ifdef BACKEND_ONNXRUNTIME
 #endif
     }
 
@@ -257,6 +281,12 @@ namespace lite
       typedef ortcv::ResNet _ONNXResNet;
       typedef ortcv::ResNeXt _ONNXResNeXt;
       typedef ortcv::GlintCosFace _ONNXGlintCosFace;
+      typedef ortcv::GlintPartialFC _ONNXGlintPartialFC;
+      typedef ortcv::FaceNet _ONNXFaceNet;
+      typedef ortcv::FocalArcFace _ONNXFocalArcFace;
+      typedef ortcv::FocalAsiaArcFace _ONNXFocalAsiaArcFace;
+      typedef ortcv::TencentCifpFace _ONNXTencentCifpFace;
+      typedef ortcv::TencentCurricularFace _ONNXTencentCurricularFace;
 
       // 1. classification
       namespace classification
@@ -300,6 +330,12 @@ namespace lite
       {
         typedef _ONNXArcFaceResNet ArcFaceResNet; //
         typedef _ONNXGlintCosFace GlintCosFace; //
+        typedef _ONNXGlintPartialFC GlintPartialFC;
+        typedef _ONNXFaceNet FaceNet;
+        typedef _ONNXFocalArcFace FocalArcFace;
+        typedef _ONNXFocalAsiaArcFace FocalAsiaArcFace;
+        typedef _ONNXTencentCifpFace TencentCifpFace;
+        typedef _ONNXTencentCurricularFace TencentCurricularFace;
       }
       // 5. segmentation
       namespace segmentation
@@ -339,6 +375,11 @@ namespace lite
       namespace resolution
       {
         typedef _ONNXSubPixelCNN SubPixelCNN;
+      }
+      // 12. image & face & human matting
+      namespace matting
+      {
+
       }
 
     }
