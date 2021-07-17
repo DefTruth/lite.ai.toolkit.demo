@@ -1,15 +1,15 @@
-# litehub-release
-Release the c++ shared libs of litehub.
+# lite.ai-release
+Demos for how to use the shared libs of [Lite.AI](https://github.com/DefTruth/lite.ai) . 
 
-## 1. Build LiteHub Examples for MacOS. 
+## 1. Build Lite.AI Examples for MacOS. 
 ```shell
-git clone --depth=1 https://github.com/DefTruth/litehub-release.git
+git clone --depth=1 https://github.com/DefTruth/lite.ai-release.git
 ```
 ```shell
-cd litehub-release/macos 
+cd lite.ai-release/macos 
 sh ./build.sh
 ```  
-See [macos/CMakeLists.txt](macos/CMakeLists.txt) to figure out how to link the shared lib of LiteHub correctly. The build.sh will build and test a YoloV5 executable demo, or you can build it manually like:  
+See [macos/CMakeLists.txt](macos/CMakeLists.txt) to figure out how to link the shared lib of Lite.AI correctly. The build.sh will build and test a demo of YoloV5, or you can build it manually like:  
 ```shell
 #!/bin/bash
 rm -rf examples/build
