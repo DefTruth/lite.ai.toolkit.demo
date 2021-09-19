@@ -21,7 +21,7 @@ namespace ortcv
   class LITE_EXPORTS VGG16Gender;                // [7] * reference: https://github.com/onnx/models/tree/master/vision/body_analysis/age_gender
   class LITE_EXPORTS SSRNet;                     // [8] * reference: https://github.com/oukohou/SSR_Net_Pytorch
   class LITE_EXPORTS FastStyleTransfer;          // [9] * reference: https://github.com/onnx/models/blob/master/vision/style_transfer/fast_neural_style
-  class LITE_EXPORTS ArcFaceResNet;              // [10] * reference: https://github.com/deepinsight/insightface/tree/master/recognition/arcface_torch
+  class LITE_EXPORTS GlintArcFace;               // [10] * reference: https://github.com/deepinsight/insightface/tree/master/recognition/arcface_torch
   class LITE_EXPORTS Colorizer;                  // [11] * reference: https://github.com/richzhang/colorization
   class LITE_EXPORTS SubPixelCNN;                // [12] * reference: https://github.com/niazwazir/SUB_PIXEL_CNN
   class LITE_EXPORTS YoloV4;                     // [13] * reference: https://github.com/argusswift/YOLOv4-pytorch
@@ -50,12 +50,44 @@ namespace ortcv
   class LITE_EXPORTS TencentCifpFace;            // [36] * reference: https://github.com/Tencent/TFace/tree/master/tasks/cifp
   class LITE_EXPORTS CenterLossFace;             // [37] * reference: https://github.com/louis-she/center-loss.pytorch
   class LITE_EXPORTS SphereFace;                 // [38] * reference: https://github.com/clcarwin/sphereface_pytorch
-  class LITE_EXPORTS DREAMFace;                  // [39] reference: https://github.com/penincillin/DREAM
-  class LITE_EXPORTS MobileFaceNet;              // [40] reference: https://github.com/Xiaoccer/MobileFaceNet_Pytorch
-  class LITE_EXPORTS CavaGhostArcFace;           // [41] reference: https://github.com/cavalleria/cavaface.pytorch
-  class LITE_EXPORTS CavaCombinedFace;           // [42] reference: https://github.com/cavalleria/cavaface.pytorch
-  class LITE_EXPORTS CategoryFaceChannel;        // [43] reference: https://github.com/pablovin/FaceChannel
-  class LITE_EXPORTS DemensionFaceChannel;       // [44] reference: https://github.com/pablovin/FaceChannel
+  class LITE_EXPORTS PoseRobustFace;             // [39] * reference: https://github.com/penincillin/DREAM
+  class LITE_EXPORTS NaivePoseRobustFace;        // [40] * reference: https://github.com/penincillin/DREAM
+  class LITE_EXPORTS MobileFaceNet;              // [41] * reference: https://github.com/Xiaoccer/MobileFaceNet_Pytorch
+  class LITE_EXPORTS CavaGhostArcFace;           // [42] * reference: https://github.com/cavalleria/cavaface.pytorch
+  class LITE_EXPORTS CavaCombinedFace;           // [43] * reference: https://github.com/cavalleria/cavaface.pytorch
+  class LITE_EXPORTS MobileSEFocalFace;          // [44] * reference: https://github.com/grib0ed0v/face_recognition.pytorch
+  class LITE_EXPORTS EfficientEmotion7;          // [45] * reference: https://github.com/HSE-asavchenko/face-emotion-recognition
+  class LITE_EXPORTS EfficientEmotion8;          // [46] * reference: https://github.com/HSE-asavchenko/face-emotion-recognition
+  class LITE_EXPORTS MobileEmotion7;             // [47] * reference: https://github.com/HSE-asavchenko/face-emotion-recognition
+  class LITE_EXPORTS ReXNetEmotion7;             // [48] * reference: https://github.com/HSE-asavchenko/face-emotion-recognition
+  class LITE_EXPORTS PFLD98;                     // [49] * reference: https://github.com/polarisZhao/PFLD-pytorch
+  class LITE_EXPORTS MobileNetV268;              // [50] * reference: https://github.com/cunjian/pytorch_face_landmark
+  class LITE_EXPORTS MobileNetV2SE68;            // [51] * reference: https://github.com/cunjian/pytorch_face_landmark
+  class LITE_EXPORTS PFLD68;                     // [52] * reference: https://github.com/cunjian/pytorch_face_landmark
+  class LITE_EXPORTS FaceLandmark1000;           // [53] * reference: https://github.com/Single430/FaceLandmark1000
+  class LITE_EXPORTS RetinaFace;                 // [54] * reference: https://github.com/biubug6/Pytorch_Retinaface
+  class LITE_EXPORTS FaceBoxes;                  // [55] * reference: https://github.com/zisianw/FaceBoxes.PyTorch
+  class LITE_EXPORTS YoloX;                      // [56] * reference: https://github.com/Megvii-BaseDetection/YOLOX
+  class LITE_EXPORTS Pyramidbox;                 // [57] reference: https://github.com/yxlijun/Pyramidbox.pytorch
+  class LITE_EXPORTS TinyFaceDet;                // [58] reference: https://github.com/varunagrawal/tiny-faces-pytorch
+  class LITE_EXPORTS S3FD;                       // [59] reference: https://github.com/yxlijun/S3FD.pytorch
+  class LITE_EXPORTS DSFD;                       // [60] reference: https://github.com/yxlijun/DSFD.pytorch
+  class LITE_EXPORTS TencentDSFD;                // [61] reference: https://github.com/Tencent/FaceDetection-DSFD
+  class LITE_EXPORTS BlazeFace;                  // [62] reference: https://github.com/hollance/BlazeFace-PyTorch
+  class LITE_EXPORTS GoinPyramidBox;             // [63] reference: https://github.com/Goingqs/PyramidBox
+  class LITE_EXPORTS CenterFace;                 // [64] reference: https://github.com/chenjun2hao/CenterFace.pytorch
+  class LITE_EXPORTS FaceMaskDetection;          // [65] reference: https://github.com/AIZOOTech/FaceMaskDetection
+  class LITE_EXPORTS DBFace;                     // [66] reference: https://github.com/dlunion/DBFace
+  class LITE_EXPORTS HRNet;                      // [67] reference: https://github.com/HRNet/HRNet-Facial-Landmark-Detection
+  class LITE_EXPORTS TinyYoloV4VOC;              // [68] * reference: https://github.com/bubbliiiing/yolov4-tiny-pytorch
+  class LITE_EXPORTS TinyYoloV4COCO;             // [69] * reference: https://github.com/bubbliiiing/yolov4-tiny-pytorch
+  class LITE_EXPORTS YoloR;                      // [70] * reference: https://github.com/WongKinYiu/yolor
+  class LITE_EXPORTS ScaledYoloV4;               // [71] * reference: https://github.com/WongKinYiu/ScaledYOLOv4
+  class LITE_EXPORTS EfficientDet;               // [71] * reference: https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch
+  class LITE_EXPORTS EfficientDetD7;             // [72] * reference: https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch
+  class LITE_EXPORTS EfficientDetD8;             // [73] * reference: https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch
+  class LITE_EXPORTS YOLOP;                      // [74] * reference: https://github.com/hustvl/YOLOP
+
 }
 
 namespace ortnlp

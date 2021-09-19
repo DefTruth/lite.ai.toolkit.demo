@@ -1,9 +1,9 @@
 //
-// Created by DefTruth on 2021/3/14.
+// Created by DefTruth on 2021/8/8.
 //
 
-#ifndef LITE_AI_LITE_H
-#define LITE_AI_LITE_H
+#ifndef LITE_AI_MODELS_H
+#define LITE_AI_MODELS_H
 
 #include "backend.h"
 
@@ -13,7 +13,7 @@
 #include "ort/core/ort_core.h"
 #include "ort/core/ort_utils.h"
 #include "ort/cv/age_googlenet.h"
-#include "ort/cv/arcface_resnet.h"
+#include "ort/cv/glint_arcface.h"
 #include "ort/cv/colorizer.h"
 #include "ort/cv/deeplabv3_resnet101.h"
 #include "ort/cv/densenet.h"
@@ -51,6 +51,32 @@
 #include "ort/cv/tencent_curricular_face.h"
 #include "ort/cv/center_loss_face.h"
 #include "ort/cv/sphere_face.h"
+#include "ort/cv/pose_robust_face.h"
+#include "ort/cv/naive_pose_robust_face.h"
+#include "ort/cv/mobile_facenet.h"
+#include "ort/cv/cava_ghost_arcface.h"
+#include "ort/cv/cava_combined_face.h"
+#include "ort/cv/yolox.h"
+#include "ort/cv/mobilese_focal_face.h"
+#include "ort/cv/efficient_emotion7.h"
+#include "ort/cv/efficient_emotion8.h"
+#include "ort/cv/mobile_emotion7.h"
+#include "ort/cv/rexnet_emotion7.h"
+#include "ort/cv/pfld98.h"
+#include "ort/cv/pfld68.h"
+#include "ort/cv/mobilenetv2_68.h"
+#include "ort/cv/mobilenetv2_se_68.h"
+#include "ort/cv/face_landmarks_1000.h"
+#include "ort/cv/retinaface.h"
+#include "ort/cv/faceboxes.h"
+#include "ort/cv/tiny_yolov4_voc.h"
+#include "ort/cv/tiny_yolov4_coco.h"
+#include "ort/cv/yolor.h"
+#include "ort/cv/scaled_yolov4.h"
+#include "ort/cv/efficientdet.h"
+#include "ort/cv/efficientdet_d7.h"
+#include "ort/cv/efficientdet_d8.h"
+#include "ort/cv/yolop.h"
 
 #endif
 
@@ -83,7 +109,7 @@ namespace lite
     typedef ortcv::VGG16Gender _VGG16Gender;
     typedef ortcv::SSRNet _SSRNet;
     typedef ortcv::FastStyleTransfer _FastStyleTransfer;
-    typedef ortcv::ArcFaceResNet _ArcFaceResNet;
+    typedef ortcv::GlintArcFace _GlintArcFace;
     typedef ortcv::Colorizer _Colorizer;
     typedef ortcv::SubPixelCNN _SubPixelCNN;
     typedef ortcv::YoloV4 _YoloV4;
@@ -112,6 +138,32 @@ namespace lite
     typedef ortcv::TencentCurricularFace _TencentCurricularFace;
     typedef ortcv::CenterLossFace _CenterLossFace;
     typedef ortcv::SphereFace _SphereFace;
+    typedef ortcv::PoseRobustFace _PoseRobustFace;
+    typedef ortcv::NaivePoseRobustFace _NaivePoseRobustFace;
+    typedef ortcv::MobileFaceNet _MobileFaceNet;
+    typedef ortcv::CavaGhostArcFace _CavaGhostArcFace;
+    typedef ortcv::CavaCombinedFace _CavaCombinedFace;
+    typedef ortcv::YoloX _YoloX;
+    typedef ortcv::MobileSEFocalFace _MobileSEFocalFace;
+    typedef ortcv::EfficientEmotion7 _EfficientEmotion7;
+    typedef ortcv::EfficientEmotion8 _EfficientEmotion8;
+    typedef ortcv::MobileEmotion7 _MobileEmotion7;
+    typedef ortcv::ReXNetEmotion7 _ReXNetEmotion7;
+    typedef ortcv::PFLD98 _PFLD98;
+    typedef ortcv::PFLD68 _PFLD68;
+    typedef ortcv::MobileNetV268 _MobileNetV268;
+    typedef ortcv::MobileNetV2SE68 _MobileNetV2SE68;
+    typedef ortcv::FaceLandmark1000 _FaceLandmark1000;
+    typedef ortcv::RetinaFace _RetinaFace;
+    typedef ortcv::FaceBoxes _FaceBoxes;
+    typedef ortcv::TinyYoloV4VOC _TinyYoloV4VOC;
+    typedef ortcv::TinyYoloV4COCO _TinyYoloV4COCO;
+    typedef ortcv::YoloR _YoloR;
+    typedef ortcv::ScaledYoloV4 _ScaledYoloV4;
+    typedef ortcv::EfficientDet _EfficientDet;
+    typedef ortcv::EfficientDetD7 _EfficientDetD7;
+    typedef ortcv::EfficientDetD8 _EfficientDetD8;
+    typedef ortcv::YOLOP _YOLOP;
 #endif
 
     // 1. classification
@@ -140,6 +192,15 @@ namespace lite
       typedef _TinyYoloV3 TinyYoloV3;
       typedef _SSD SSD;
       typedef _SSDMobileNetV1 SSDMobileNetV1;
+      typedef _YoloX YoloX;
+      typedef _TinyYoloV4VOC TinyYoloV4VOC;
+      typedef _TinyYoloV4COCO TinyYoloV4COCO;
+      typedef _YoloR YoloR;
+      typedef _ScaledYoloV4 ScaledYoloV4;
+      typedef _EfficientDet EfficientDet;
+      typedef _EfficientDetD7 EfficientDetD7;
+      typedef _EfficientDetD8 EfficientDetD8;
+      typedef _YOLOP YOLOP;
 #endif
     }
     // 3. face detection & facial attributes detection
@@ -155,18 +216,36 @@ namespace lite
       typedef _VGG16Gender VGG16Gender; // gender estimation
       typedef _EmotionFerPlus EmotionFerPlus; // emotion detection
       typedef _SSRNet SSRNet; // age estimation
+      typedef _EfficientEmotion7 EfficientEmotion7;
+      typedef _EfficientEmotion8 EfficientEmotion8;
+      typedef _MobileEmotion7 MobileEmotion7;
+      typedef _ReXNetEmotion7 ReXNetEmotion7;
+      typedef _PFLD98 PFLD98;
+      typedef _PFLD68 PFLD68;
+      typedef _MobileNetV268 MobileNetV268;
+      typedef _MobileNetV2SE68 MobileNetV2SE68;
+      typedef _FaceLandmark1000 FaceLandmark1000;
+      typedef _RetinaFace RetinaFace;
+      typedef _FaceBoxes FaceBoxes;
 #endif
       namespace detect
       {
 #ifdef BACKEND_ONNXRUNTIME
         typedef _UltraFace UltraFace;  // face detection.
+        typedef _RetinaFace RetinaFace;
+        typedef _FaceBoxes FaceBoxes;
 #endif
       }
 
       namespace align
       {
 #ifdef BACKEND_ONNXRUNTIME
-        typedef _PFLD PFLD; // facial landmarks detection.
+        typedef _PFLD PFLD; // facial landmarks detection. 106 points
+        typedef _PFLD98 PFLD98; // 98 points
+        typedef _PFLD68 PFLD68; // 68 points
+        typedef _MobileNetV268 MobileNetV268; // 68 points
+        typedef _MobileNetV2SE68 MobileNetV2SE68; // 68 points
+        typedef _FaceLandmark1000 FaceLandmark1000; // 1000 points
 #endif
       }
 
@@ -186,6 +265,10 @@ namespace lite
         typedef _VGG16Gender VGG16Gender; // gender estimation
         typedef _EmotionFerPlus EmotionFerPlus; // emotion detection
         typedef _SSRNet SSRNet; // age estimation
+        typedef _EfficientEmotion7 EfficientEmotion7;
+        typedef _EfficientEmotion8 EfficientEmotion8;
+        typedef _MobileEmotion7 MobileEmotion7;
+        typedef _ReXNetEmotion7 ReXNetEmotion7;
 #endif
       }
 
@@ -194,7 +277,7 @@ namespace lite
     namespace faceid
     {
 #ifdef BACKEND_ONNXRUNTIME
-      typedef _ArcFaceResNet ArcFaceResNet; //
+      typedef _GlintArcFace GlintArcFace; //
       typedef _GlintCosFace GlintCosFace; //
       typedef _GlintPartialFC GlintPartialFC;
       typedef _FaceNet FaceNet;
@@ -204,6 +287,12 @@ namespace lite
       typedef _TencentCifpFace TencentCifpFace;
       typedef _CenterLossFace CenterLossFace;
       typedef _SphereFace SphereFace;
+      typedef _PoseRobustFace PoseRobustFace;
+      typedef _NaivePoseRobustFace NaivePoseRobustFace;
+      typedef _MobileFaceNet MobileFaceNet;
+      typedef _CavaGhostArcFace CavaGhostArcFace;
+      typedef _CavaCombinedFace CavaCombinedFace;
+      typedef _MobileSEFocalFace MobileSEFocalFace;
 #endif
 
     }
@@ -263,7 +352,6 @@ namespace lite
 #ifdef BACKEND_ONNXRUNTIME
 #endif
     }
-
   }
 
   namespace asr
@@ -276,6 +364,59 @@ namespace lite
   {
 #ifdef BACKEND_ONNXRUNTIME
 #endif
+  }
+}
+
+// models for mobile device
+namespace lite
+{
+  namespace mobile
+  {
+    // classification
+    namespace classification
+    {
+    }
+    // object detection
+    namespace detection
+    {
+    }
+    // face etc.
+    namespace face
+    {
+      namespace detect
+      {
+      }
+      namespace align
+      {
+      }
+      namespace pose
+      {
+      }
+      namespace attr
+      {
+      }
+    }
+    // face recognition
+    namespace faceid
+    {
+    }
+    // segmentation
+    namespace segmentation
+    {
+    }
+    // reid
+    namespace reid
+    {
+    }
+    // ocr
+    namespace ocr
+    {
+    }
+    // matting
+    namespace matting
+    {
+    }
+
   }
 }
 
@@ -299,7 +440,7 @@ namespace lite
       typedef ortcv::VGG16Gender _ONNXVGG16Gender;
       typedef ortcv::SSRNet _ONNXSSRNet;
       typedef ortcv::FastStyleTransfer _ONNXFastStyleTransfer;
-      typedef ortcv::ArcFaceResNet _ONNXArcFaceResNet;
+      typedef ortcv::GlintArcFace _ONNXGlintArcFace;
       typedef ortcv::Colorizer _ONNXColorizer;
       typedef ortcv::SubPixelCNN _ONNXSubPixelCNN;
       typedef ortcv::YoloV4 _ONNXYoloV4;
@@ -328,6 +469,32 @@ namespace lite
       typedef ortcv::TencentCurricularFace _ONNXTencentCurricularFace;
       typedef ortcv::CenterLossFace _ONNXCenterLossFace;
       typedef ortcv::SphereFace _ONNXSphereFace;
+      typedef ortcv::PoseRobustFace _ONNXPoseRobustFace;
+      typedef ortcv::NaivePoseRobustFace _ONNXNaivePoseRobustFace;
+      typedef ortcv::MobileFaceNet _ONNXMobileFaceNet;
+      typedef ortcv::CavaGhostArcFace _ONNXCavaGhostArcFace;
+      typedef ortcv::CavaCombinedFace _ONNXCavaCombinedFace;
+      typedef ortcv::YoloX _ONNXYoloX;
+      typedef ortcv::MobileSEFocalFace _ONNXMobileSEFocalFace;
+      typedef ortcv::EfficientEmotion7 _ONNXEfficientEmotion7;
+      typedef ortcv::EfficientEmotion8 _ONNXEfficientEmotion8;
+      typedef ortcv::MobileEmotion7 _ONNXMobileEmotion7;
+      typedef ortcv::ReXNetEmotion7 _ONNXReXNetEmotion7;
+      typedef ortcv::PFLD98 _ONNXPFLD98;
+      typedef ortcv::PFLD68 _ONNXPFLD68;
+      typedef ortcv::MobileNetV268 _ONNXMobileNetV268;
+      typedef ortcv::MobileNetV2SE68 _ONNXMobileNetV2SE68;
+      typedef ortcv::FaceLandmark1000 _ONNXFaceLandmark1000;
+      typedef ortcv::RetinaFace _ONNXRetinaFace;
+      typedef ortcv::FaceBoxes _ONNXFaceBoxes;
+      typedef ortcv::TinyYoloV4VOC _ONNXTinyYoloV4VOC;
+      typedef ortcv::TinyYoloV4COCO _ONNXTinyYoloV4COCO;
+      typedef ortcv::YoloR _ONNXYoloR;
+      typedef ortcv::ScaledYoloV4 _ONNXScaledYoloV4;
+      typedef ortcv::EfficientDet _ONNXEfficientDet;
+      typedef ortcv::EfficientDetD7 _ONNXEfficientDetD7;
+      typedef ortcv::EfficientDetD8 _ONNXEfficientDetD8;
+      typedef ortcv::YOLOP _ONNXYOLOP;
 
       // 1. classification
       namespace classification
@@ -352,6 +519,15 @@ namespace lite
         typedef _ONNXTinyYoloV3 TinyYoloV3;
         typedef _ONNXSSD SSD;
         typedef _ONNXSSDMobileNetV1 SSDMobileNetV1;
+        typedef _ONNXYoloX YoloX;
+        typedef _ONNXTinyYoloV4VOC TinyYoloV4VOC;
+        typedef _ONNXTinyYoloV4COCO TinyYoloV4COCO;
+        typedef _ONNXYoloR YoloR;
+        typedef _ONNXScaledYoloV4 ScaledYoloV4;
+        typedef _ONNXEfficientDet EfficientDet;
+        typedef _ONNXEfficientDetD7 EfficientDetD7;
+        typedef _ONNXEfficientDetD8 EfficientDetD8;
+        typedef _ONNXYOLOP YOLOP;
       }
       // 3. face detection & facial attributes detection
       namespace face
@@ -365,15 +541,33 @@ namespace lite
         typedef _ONNXVGG16Gender VGG16Gender; // gender estimation
         typedef _ONNXEmotionFerPlus EmotionFerPlus; // emotion detection
         typedef _ONNXSSRNet SSRNet; // age estimation
+        typedef _ONNXEfficientEmotion7 EfficientEmotion7;
+        typedef _ONNXEfficientEmotion8 EfficientEmotion8;
+        typedef _ONNXMobileEmotion7 MobileEmotion7;
+        typedef _ONNXReXNetEmotion7 ReXNetEmotion7;
+        typedef _ONNXPFLD98 PFLD98;
+        typedef _ONNXPFLD68 PFLD68;
+        typedef _ONNXMobileNetV268 MobileNetV268;
+        typedef _ONNXMobileNetV2SE68 MobileNetV2SE68;
+        typedef _ONNXFaceLandmark1000 FaceLandmark1000;
+        typedef _ONNXRetinaFace RetinaFace;
+        typedef _ONNXFaceBoxes FaceBoxes;
 
         namespace detect
         {
           typedef _ONNXUltraFace UltraFace;  // face detection.
+          typedef _ONNXRetinaFace RetinaFace;
+          typedef _ONNXFaceBoxes FaceBoxes;
         }
 
         namespace align
         {
-          typedef _ONNXPFLD PFLD; // facial landmarks detection.
+          typedef _ONNXPFLD PFLD; // facial landmarks detection. 106 points
+          typedef _ONNXPFLD98 PFLD98; // 98 points
+          typedef _ONNXPFLD68 PFLD68; // 68 points
+          typedef _ONNXMobileNetV268 MobileNetV268; // 68 points
+          typedef _ONNXMobileNetV2SE68 MobileNetV2SE68; // 68 points
+          typedef _ONNXFaceLandmark1000 FaceLandmark1000; // 1000 points
         }
 
         namespace pose
@@ -389,12 +583,16 @@ namespace lite
           typedef _ONNXVGG16Gender VGG16Gender; // gender estimation
           typedef _ONNXEmotionFerPlus EmotionFerPlus; // emotion detection
           typedef _ONNXSSRNet SSRNet; // age estimation
+          typedef _ONNXEfficientEmotion7 EfficientEmotion7;
+          typedef _ONNXEfficientEmotion8 EfficientEmotion8;
+          typedef _ONNXMobileEmotion7 MobileEmotion7;
+          typedef _ONNXReXNetEmotion7 ReXNetEmotion7;
         }
       }
       // 4. face recognition
       namespace faceid
       {
-        typedef _ONNXArcFaceResNet ArcFaceResNet; //
+        typedef _ONNXGlintArcFace GlintArcFace; //
         typedef _ONNXGlintCosFace GlintCosFace; //
         typedef _ONNXGlintPartialFC GlintPartialFC;
         typedef _ONNXFaceNet FaceNet;
@@ -404,6 +602,13 @@ namespace lite
         typedef _ONNXTencentCurricularFace TencentCurricularFace;
         typedef _ONNXCenterLossFace CenterLossFace;
         typedef _ONNXSphereFace SphereFace;
+        typedef _ONNXPoseRobustFace PoseRobustFace;
+        typedef _ONNXNaivePoseRobustFace NaivePoseRobustFace;
+        typedef _ONNXMobileFaceNet MobileFaceNet;
+        typedef _ONNXCavaGhostArcFace CavaGhostArcFace;
+        typedef _ONNXCavaCombinedFace CavaCombinedFace;
+        typedef _ONNXMobileSEFocalFace MobileSEFocalFace;
+
       }
       // 5. segmentation
       namespace segmentation
@@ -486,4 +691,5 @@ namespace lite
   {
   }
 }
-#endif //LITE_AI_LITE_H
+
+#endif //LITE_AI_MODELS_H
