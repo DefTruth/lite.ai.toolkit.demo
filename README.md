@@ -3,7 +3,7 @@ Demos for how to use the shared libs of [Lite.AI.ToolKit](https://github.com/Def
 
 ## Releases Lists.  
 You can download the released built lib of Lite.AI.ToolKit and all the needed dependencies.  
-* [lite.ai.toolkit.macos.v0.1.0](https://github.com/DefTruth/lite.ai.toolkit.demo/releases/macos/v0.1.0)
+* [lite.ai.toolkit.macos.v0.1.0](https://github.com/DefTruth/lite.ai.toolkit.demo/tree/main/releases/macos/v0.1.0)
 
 ## 1. MacOS's demo. 
 
