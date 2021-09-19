@@ -1,6 +1,10 @@
 # Lite.AI.ToolKit.Demo
 Demos for how to use the shared libs of [Lite.AI.ToolKit](https://github.com/DefTruth/lite.ai.toolkit). Star 🌟👆🏻 this repo if it does any helps to you ~ 🙃🤪🍀
 
+## Releases Lists.  
+You can download the released built lib of Lite.AI.ToolKit and all the needed dependencies.  
+* [lite.ai.toolkit.macos.v0.1.0](https://github.com/DefTruth/lite.ai.toolkit.demo/releases/macos/v0.1.0)
+
 ## 1. MacOS's demo. 
 
 * Clone this repo and run *build.sh*.
@@ -8,7 +12,7 @@ Demos for how to use the shared libs of [Lite.AI.ToolKit](https://github.com/Def
 git clone --depth=1 https://github.com/DefTruth/lite.ai.toolkit.demo.git
 ```
 ```shell
-cd lite.ai.toolkit/macos 
+cd lite.ai.toolkit/macos # or cd lite.ai.toolkit/releases/macos/v0.1.0 for specific version.
 sh ./build.sh
 ```  
 See [macos/CMakeLists.txt](macos/CMakeLists.txt) to figure out how to link the shared lib of Lite.AI correctly. The build.sh will build and test a demo of YoloV5, or you can build it manually like:  
