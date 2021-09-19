@@ -1,4 +1,4 @@
-# Lite.AI.ToolKit.Demo
+## Lite.AI.ToolKit.Demo 🚀🚀🌟
 Demos for how to use the shared libs of [Lite.AI.ToolKit](https://github.com/DefTruth/lite.ai.toolkit). Star 🌟👆🏻 this repo if it does any helps to you ~ 🙃🤪🍀
 
 ## Releases Lists.  
